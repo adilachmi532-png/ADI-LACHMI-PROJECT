@@ -1,36 +1,35 @@
+
+
 from Securities import Stock, Bond, Option
 
 def main():
+    print("=== Securities Summary ===")
+
     stock = Stock(
-        input("Stock name: "),
-        float(input("Stock price: ")),
-        int(input("Stock qty: ")),
-        float(input("Dividend: "))
+        input("Stock ID: ").strip(),
+        float(input("Stock unit price: ")),
+        int(input("Units held: ")),
+        float(input("Dividend per unit (quarterly): "))
     )
 
     bond = Bond(
-        input("\nBond name: "),
-        float(input("Bond price: ")),
-        int(input("Bond qty: ")),
-        float(input("Interest: "))
+        input("\nBond ID: ").strip(),
+        float(input("Bond unit price: ")),
+        int(input("Units held: ")),
+        float(input("Annual rate (e.g. 0.05): "))
     )
 
     option = Option(
-        input("\nOption name: "),
-        float(input("Option price: ")),
-        int(input("Option qty: ")),
-        float(input("Strike: "))
+        input("\nOption ID: ").strip(),
+        float(input("Underlying unit price: ")),
+        int(input("Units held: ")),
+        float(input("Strike price: "))
     )
 
-    print("\n--- Results ---")
-    print("Stock value:", stock.value())
-    print("Dividend:", stock.yearly_dividend())
-
-    print("Bond value:", bond.value())
-    print("Interest:", bond.yearly_interest())
-
-    print("Option value:", option.value())
-    print("Profitable?:", option.is_profitable())
+    print("\n--- Portfolio Report ---")
+    print(f"[STOCK]  {stock.asset_id} | Value: {stock.position_value():,.2f} | Annual Dividend: {stock.annual_dividend():,.2f}")
+    print(f"[BOND]   {bond.asset_id} | Value: {bond.position_value():,.2f} | Annual Interest: {bond.annual_interest_income():,.2f}")
+    print(f"[OPTION] {option.asset_id} | Value: {option.position_value():,.2f} | Status: {'ITM' if option.is_in_the_money() else 'OTM'}")
 
 if __name__ == "__main__":
     main()
