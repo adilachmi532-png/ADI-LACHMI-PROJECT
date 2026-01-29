@@ -1,6 +1,4 @@
 
-# Securities.py
-
 class Security:
     def __init__(self, asset_id, unit_price, units):
         self.asset_id = asset_id
