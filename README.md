@@ -7,8 +7,8 @@ MainInvoice.py – Main file for Invoice
 Securities.py – Securities class  
 MainSecurities.py – Main file for Securities
 
-### Section 4 – Multiplication
-Multiplication.py – Multiplication operation
+### Section 4 – ReplLoop
+ReplLoop.py – Multiplication operation
 
 מהי מטרת הכימוס ומהי תוצאות?
 מטרת הכימוס היא לשמור את הנתונים של האובייקט בתוך המחלקה ולמנוע גישה ישירה אליהם. העבודה עם הנתונים נעשית דרך פונקציות של המחלקה בלבד, וכך נמנעות טעויות. תוצאת הכימוס היא אובייקט בטוח ומסודר שקל להשתמש בו מבלי לפגוע בנתונים שלו.
